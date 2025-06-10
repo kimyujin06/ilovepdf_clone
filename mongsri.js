@@ -1,18 +1,10 @@
 console.clear(); // Start with a clean console on refesh
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-ScrollSmoother.create({
-  wrapper: "#smooth-wrapper",
-  content: "#smooth-content",
-  smooth: 1.5,
-  effects: true
-});
+gsap.registerPlugin(ScrollTrigger);
 
 const slider = document.querySelector(".slider");
 const items = gsap.utils.toArray(".item");
 const offset = 30;
-
 
 function moveCard() {
   const lastItem = slider.querySelector(".item:last-child");
@@ -48,7 +40,7 @@ document.body.addEventListener("click", (e) => {
       return gsap.from(elements, {
         yPercent: 20,
         opacity: 0,
-        ease: "sine.out"
+        ease: "sine.out",
       });
     },
     onLeave: (elements) => {
@@ -58,44 +50,46 @@ document.body.addEventListener("click", (e) => {
         opacity: 0,
         ease: "sine.out",
         onComplete() {
-          elements.forEach(el => el.remove());
-        }
+          elements.forEach((el) => el.remove());
+        },
       });
-    }
+    },
   });
 });
 
-const textElements = gsap.utils.toArray('#inc01 .b_txt');
-textElements.forEach(text => {
+const textElements = gsap.utils.toArray("#inc01 .b_txt");
+textElements.forEach((text) => {
   gsap.to(text, {
-    backgroundSize: '100%',
-    ease: 'none',
+    backgroundSize: "100%",
+    ease: "none",
     scrollTrigger: {
       trigger: text,
-      start: 'center 40%',
-      end: 'center 35%',
+      start: "center 40%",
+      end: "center 35%",
       scrub: 1,
     },
   });
 });
 
 gsap.utils.toArray(".item").forEach((item) => {
-let color = item.getAttribute("data-bgcolor");
+  let color = item.getAttribute("data-bgcolor");
 
-ScrollTrigger.create({
+  ScrollTrigger.create({
     trigger: item,
     start: "top 50%",
     end: "bottom 50%",
 
-    onEnter: () => gsap.to("body", {
+    onEnter: () =>
+      gsap.to("body", {
         backgroundColor: color,
         duration: 1.4,
-    }),
-    onEnterBack: () => gsap.to("body", {
+      }),
+    onEnterBack: () =>
+      gsap.to("body", {
         backgroundColor: color,
         duration: 1.4,
-    }),
-});
+      }),
+  });
 });
 
 document.querySelectorAll(".sample").forEach((sample, index) => {
@@ -106,15 +100,16 @@ document.querySelectorAll(".sample").forEach((sample, index) => {
       end: "101% bottom",
       scrub: 4,
       markers: false,
-    }
+    },
   });
 
   const words = sample.querySelectorAll(".txt");
 
   words.forEach((word) => {
-    tl.fromTo(word,
-      { width: '0%', opacity: 0 },
-      { width: 'auto', opacity: 1, duration: 1.2, ease: 'power2.out' }
+    tl.fromTo(
+      word,
+      { width: "0%", opacity: 0 },
+      { width: "auto", opacity: 1, duration: 1.2, ease: "power2.out" }
     );
   });
 });
@@ -126,7 +121,7 @@ const closeBtn = document.querySelector(".close-btn");
 const modalBg = document.querySelector(".modal-bg");
 
 // 이미지 클릭 시 팝업 열기
-document.querySelectorAll(".img_box img").forEach(img => {
+document.querySelectorAll(".img_box img").forEach((img) => {
   img.addEventListener("click", () => {
     modal.style.display = "flex";
     modalImg.src = img.src;
@@ -151,7 +146,7 @@ const closeModal = () => {
       // 초기화(다음 열 때 대비)
       modalImg.style.opacity = "1";
       modalImg.style.transform = "scale(1)";
-    }
+    },
   });
 };
 
