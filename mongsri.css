@@ -515,7 +515,7 @@ main {
 }
 
 .slide .move {
-  animation: floatUpDown 2s ease-in-out infinite;
+  animation: moveing 2s ease-in-out infinite;
 }
 
 .slide .content {

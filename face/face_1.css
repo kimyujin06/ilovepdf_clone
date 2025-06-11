@@ -1,0 +1,386 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css"); /* regular-400, medium-500, semibold-600, bold-700 */
+@import url("https://fonts.googleapis.com/css2?family=Hi+Melody&family=Zen+Kaku+Gothic+New&display=swap");
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Pretendard", sans-serif;
+}
+
+.bg {
+  background-image: url("../img/bg.png");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+::selection {
+  background-color: #a6daf4;
+  color: white;
+}
+
+/* 전체 스크롤바 영역 */
+::-webkit-scrollbar {
+  width: 20px;
+  height: 10px;
+}
+
+/* 스크롤바 트랙 (배경) */
+::-webkit-scrollbar-track {
+  background: #e0f7ff;
+  border-radius: 10px;
+}
+
+/* 스크롤바 막대 */
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+  border: 2px solid #ddd; /* 트랙 색상과 같은 색상으로 경계 주면 더 부드러움 */
+}
+
+/* 스크롤바 막대 hover 시 */
+::-webkit-scrollbar-thumb:hover {
+  background: #5ad2ff;
+  border-color: #5ad2ff;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+header div {
+  width: fit-content;
+  height: 100px;
+  overflow: hidden;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  height: 80px;
+}
+
+.sec1 {
+  margin: 0;
+  /* background: #fff; */
+  font-family: sans-serif;
+  scroll-behavior: none;
+}
+
+.title {
+  font-size: max(2vw, 24px);
+  line-height: 1.1;
+  padding-bottom: 0.4em;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  font-family: "Hi Melody", sans-serif;
+}
+
+.text {
+  font-size: max(1vw, 15px);
+  line-height: 1.4;
+  overflow: hidden;
+  padding-bottom: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.accordions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20vh;
+}
+
+.pin-spacer {
+  max-height: 1700px;
+}
+
+.accordion {
+  background: linear-gradient(
+    200deg,
+    rgb(119, 189, 255) 13.57%,
+    rgb(142, 195, 255) 98.38%
+  );
+  width: max(50vw, 280px);
+  padding: 25px 30px 10px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.3);
+
+  &:nth-child(2) {
+    background: linear-gradient(
+      200deg,
+      rgb(197, 238, 255) 13.57%,
+      rgb(175, 180, 248) 98.38%
+    );
+  }
+
+  &:nth-child(3) {
+    background: linear-gradient(
+      200deg,
+      rgb(148, 173, 255) 13.57%,
+      rgb(154, 194, 255) 98.38%
+    );
+  }
+
+  &:nth-child(4) {
+    background: linear-gradient(200deg, #adc3ff 13.57%, #92abff 98.38%);
+  }
+}
+
+.spacer {
+  height: 150px;
+}
+
+@media (max-width: 480px) {
+  .accordion {
+    padding: 15px 20px 8px;
+  }
+  .title {
+    font-size: 20px;
+  }
+}
+
+.accordions {
+  min-height: 470px;
+}
+
+/* 이미지 flex 섹션 */
+.img_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 998;
+}
+
+.img_flex:last-child {
+  margin-bottom: 200px;
+}
+
+.img_box {
+  height: 500px;
+  width: 40%;
+  overflow: hidden;
+  margin-top: 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.img_box:hover img {
+  transform: scale(1.2);
+}
+
+.img_box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* 팝업 배경 */
+.img-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-modal .modal-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+/* 팝업 이미지 */
+.modal-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.4s ease;
+}
+
+/* 닫기 버튼 */
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  z-index: 3;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 300; /* 얇게 */
+  font-family: "Pretendard", sans-serif;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #ccc;
+  transform: scale(1.2);
+}
+
+footer {
+  height: 50px;
+}
+
+/* sample 섹션 텍스트 애니메이션 관련 */
+.sample {
+  position: relative;
+  height: 1200px;
+  font-size: 84px;
+  font-weight: 700;
+  color: #82d5ee6e;
+  margin-top: 150px;
+}
+
+.sample_box > p:first-child {
+  width: fit-content;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 40px;
+  background-color: #92abff;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.sample_box > p:last-child {
+  width: fit-content;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 60px;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  color: #bdcacf;
+}
+
+.sample_box {
+  position: sticky;
+  top: 50px;
+  margin-bottom: 40px;
+  margin-top: 100px;
+}
+
+.sample .txt_area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sample .txt_area p {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  overflow: hidden;
+}
+
+.sample .txt_area p + p {
+  margin-left: 10px;
+}
+
+.sample .txt_area .word01,
+.sample .txt_area .word02 {
+  opacity: 0;
+  width: 0;
+}
+
+.face {
+  width: fit-content;
+  margin: 0px auto;
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.face div {
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.face div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.face p {
+  padding: 20px 50px;
+  background-color: #adc3ff;
+  color: #fff;
+  border-radius: 15px;
+  font-size: 35px;
+  font-family: "Hi Melody", sans-serif;
+}
+
+@keyframes moveing {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.face p + p {
+  padding: 20px 50px;
+  background-color: #cccccc;
+  color: #fff;
+  border-radius: 15px;
+  font-size: 24px;
+  animation: moveing 2s ease-in-out infinite;
+}
