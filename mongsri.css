@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css"); /* regular-400, medium-500, semibold-600, bold-700 */
+@import url("https://fonts.googleapis.com/css2?family=Hi+Melody&family=Zen+Kaku+Gothic+New&display=swap");
 
 body,
 html {
@@ -6,9 +7,22 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Pretendard", sans-serif;
+}
+
+.bg {
   background-image: url("./img/bg.png");
-  background-attachment: fixed;
-  background-position: 100%;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+.main-content {
+  position: relative;
+  z-index: 1;
 }
 
 a {
@@ -82,6 +96,7 @@ header img {
   margin: 0px auto;
   top: 170px;
   right: 10px;
+  padding-top: 20px;
 }
 
 @keyframes gal {
@@ -394,4 +409,133 @@ header img {
 
 footer {
   height: 50px;
+}
+
+.face {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 62%;
+  margin: 0px auto;
+  position: relative;
+  z-index: 997;
+  gap: 32px;
+}
+
+.face a {
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  margin-top: 20px;
+  align-self: center;
+  transition: 0.3s;
+}
+
+.face a:hover img {
+  transform: scale(1.1);
+}
+
+.face a:nth-of-type(9) {
+  margin-left: 0;
+}
+
+.face div {
+  width: 100%;
+  height: 100%;
+}
+
+.face a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.ends {
+  min-height: 50vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.slides {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.slides .list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.slides .slide {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.slide .background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  will-change: transform;
+  background-size: cover;
+}
+
+@keyframes moveing {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.slide .move {
+  animation: floatUpDown 2s ease-in-out infinite;
+}
+
+.slide .content {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  display: flex;
+  text-align: center;
+  width: 95%;
+  padding: 3rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: 40rem;
+  position: relative;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.849);
+  text-transform: uppercase;
+  font-size: 5.6rem;
+  line-height: 1.25em;
+  font-weight: 500;
+  font-family: "Hi Melody", sans-serif;
 }
