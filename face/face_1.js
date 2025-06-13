@@ -221,3 +221,15 @@ slides.forEach((slide, i) => {
     0
   );
 });
+
+document.addEventListener("mousemove", (e) => {
+  gsap.to(".cur", {
+    x: e.clientX,
+    y: e.clientY,
+    stagger: {
+      // wrap advanced options in an object
+      each: -0.02,
+      ease: "power2.inOut",
+    },
+  });
+});
