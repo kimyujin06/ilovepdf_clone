@@ -660,3 +660,12 @@ main {
     height: 65px;
   }
 }
+@media screen and (max-width: 500px) {
+  .slider .item {
+    width: 250px;
+    height: 200px;
+  }
+  header img {
+    height: 45px;
+  }
+}
