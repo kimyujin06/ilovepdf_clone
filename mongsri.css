@@ -744,4 +744,8 @@ main {
   .slider_wrap {
     width: 100%;
   }
+  .face a {
+    width: 70px;
+    height: 70px;
+  }
 }
