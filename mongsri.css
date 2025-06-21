@@ -675,6 +675,7 @@ main {
   .gal {
     right: 0;
     height: 150px;
+    top: 105px;
   }
   .gal img {
     height: 110px;
@@ -715,10 +716,14 @@ main {
   .slider .item:nth-child(14),
   .slider .item:nth-child(15),
   .slider .item:nth-child(16) {
-    left: 27%;
+    left: 19%;
     transform: translateX(-50px);
   }
   .img_box {
     height: 220px;
+  }
+  .slider_wrap {
+    margin-bottom: -95px;
+    margin-top: -103px;
   }
 }
