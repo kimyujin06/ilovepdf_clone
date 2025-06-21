@@ -540,13 +540,52 @@ main {
   font-family: "pretendard", sans-serif;
 }
 
+@media screen and (max-width: 1400px) {
+  .sample {
+    font-size: 50px;
+  }
+}
+
 @media screen and (max-width: 1135px) {
   .slides {
     display: none;
   }
+  .face {
+    width: 90%;
+  }
+  .img_box {
+    width: 49%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .sample {
+    font-size: 40px;
+  }
+  .face a {
+    width: 110px;
+    height: 110px;
+  }
+  .img_box {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 706px) {
+  .sample {
+    font-size: 25px;
+    margin-top: 0;
+    height: 200px;
+  }
+  .sample_box > p:first-child {
+    font-size: 15px;
+  }
+  .sample_box > p:last-child {
+    font-size: 15px;
+  }
+  .sample_box > p:last-child {
+    padding-top: 30px;
+  }
   .gal img {
     height: 155px;
   }
@@ -576,7 +615,11 @@ main {
     bottom: 76px;
   }
   .slider_wrap {
+    min-height: 0px;
     height: 1000px;
+  }
+  .sample_box {
+    margin-top: 60px;
   }
 }
 @media screen and (max-width: 624px) {
