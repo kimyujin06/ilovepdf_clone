@@ -95,7 +95,7 @@ header img {
 }
 
 .title {
-  font-size: 30px;
+  font-size: 32px;
   line-height: 1.1;
   padding-bottom: 0.4em;
   color: rgb(255, 255, 255);
@@ -603,7 +603,9 @@ footer {
     font-size: 30px;
   }
   .text {
-    font-size: 17px;
+    font-size: 20px;
+    color: #fff;
+    padding-bottom: 0;
   }
 
   @keyframes moveing_x {
