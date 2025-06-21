@@ -169,7 +169,7 @@ header img {
 }
 
 .accordions {
-  min-height: 470px;
+  min-height: 800px;
 }
 
 /* 이미지 flex 섹션 */
@@ -305,7 +305,7 @@ footer {
   position: sticky;
   top: 50px;
   margin-bottom: 40px;
-  margin-top: 100px;
+  margin-top: 400px;
 }
 
 .sample .txt_area {
@@ -552,6 +552,7 @@ footer {
 @media screen and (max-width: 900px) {
   .sample {
     font-size: 40px;
+    margin-top: 400px !important;
   }
   .img_box {
     width: 90%;
