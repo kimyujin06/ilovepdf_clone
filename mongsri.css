@@ -185,7 +185,7 @@ header img {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 1000px;
   cursor: pointer;
   position: relative;
 }
@@ -544,6 +544,9 @@ main {
 @media screen and (max-width: 1400px) {
   .sample {
     font-size: 50px;
+  }
+  .slider_wrap {
+    height: 1000px;
   }
 }
 
