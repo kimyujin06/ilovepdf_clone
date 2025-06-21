@@ -305,7 +305,7 @@ footer {
   position: sticky;
   top: 50px;
   margin-bottom: 40px;
-  margin-top: 400px;
+  margin-top: 150px;
 }
 
 .sample .txt_area {
@@ -552,7 +552,6 @@ footer {
 @media screen and (max-width: 900px) {
   .sample {
     font-size: 40px;
-    margin-top: 400px !important;
   }
   .img_box {
     width: 90%;
@@ -608,13 +607,20 @@ footer {
     color: #fff;
     padding-bottom: 0;
   }
+  .cursor {
+    display: none;
+  }
+
+  /* .main-content {
+    overflow: hidden;
+  } */
 
   @keyframes moveing_x {
     0% {
       transform: translateX(0px);
     }
     50% {
-      transform: translateX(30px);
+      transform: translateX(0px);
     }
     100% {
       transform: translateX(0px);
@@ -623,13 +629,13 @@ footer {
 
   @keyframes moveing_x2 {
     0% {
-      transform: translateX(30px);
+      transform: translateX(0px);
     }
     50% {
       transform: translateX(0px);
     }
     100% {
-      transform: translateX(30px);
+      transform: translateX(0px);
     }
   }
 
@@ -638,7 +644,7 @@ footer {
       transform: translateX(0px);
     }
     50% {
-      transform: translateX(-30px);
+      transform: translateX(0px);
     }
     100% {
       transform: translateX(0px);
@@ -646,15 +652,15 @@ footer {
   }
   .face div img:nth-of-type(3) {
     height: 70px;
-    right: -100px;
+    right: -70px;
   }
   .face div img:nth-of-type(2) {
     height: 70px;
-    left: -100px;
+    left: -70px;
   }
   .face div img:nth-of-type(4) {
     height: 70px;
-    left: -100px;
+    left: -70px;
   }
   .face div {
     width: 250px;
