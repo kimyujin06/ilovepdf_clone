@@ -616,7 +616,7 @@ main {
   }
   .slider_wrap {
     min-height: 0px;
-    height: 1000px;
+    height: 985px;
   }
   .sample_box {
     margin-top: 60px;
@@ -647,5 +647,13 @@ main {
   .slider .item:nth-child(15),
   .slider .item:nth-child(16) {
     left: 80px;
+  }
+  .sample {
+    font-size: 20px;
+    margin-top: 0;
+    height: 200px;
+  }
+  header img {
+    height: 65px;
   }
 }
